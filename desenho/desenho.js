@@ -49,9 +49,11 @@ function cadastrarArte() {
 			rl.question('Digite a data de criação: ', (criacao) => {
                 rl.question('Digite a descrição da Arte: ', (descricao) => {
                     rl.question('Digite a categoria da arte: ', (camada) => {
-                    arte.push({ nome:nome, autor:artista, criação:criacao, dscrição:descricao, categoria:camada })
-				    console.log('Arte cadastrado com sucesso!')
-				    exibirMenu()
+                        rl.question('Digite o estilo da arte: ', (estilo) => {
+                            arte.push({ nome:nome, autor:artista, criacao:criacao, descricao:descricao, categoria:camada, estilo:estilo })
+                            console.log('Arte cadastrado com sucesso!')
+                            exibirMenu()
+                        })
                     })
                 })
 			})
@@ -75,7 +77,7 @@ function editar() {
         exibirMenu()
     } else {
         for (let i = 0; i < arte.length; i++) {
-            console.log(`${i+1}:${arte[i].nome},${arte[i].artista},${arte[i].criacao},${arte[i.descricao]},${arte[i].camada}`)
+            console.log(`${i+1}:${arte[i].nome},${arte[i].autor},${arte[i].criacao},${arte[i].descricao},${arte[i].categoria},${arte[i].estilo}`)
         }
         rl.question('Digite o número do elemento que deseja editar: ', (numero) => {
             if (numero > 0 && numero <= arte.length) {
@@ -84,9 +86,11 @@ function editar() {
                         rl.question('Digite a nova data de criação: ', (criacao) => {
                             rl.question('Digite a nova descrição: ', (descricao) => {
                                 rl.question('Digite a nova categoria: ', (camada) => {
-                                    jogo[numero - 1] = {nome,artista,criacao,descricao,camada}
+                                    rl.question('Digite a novo estilo: ', (estilo) => {
+                                    arte[numero - 1] = {nome,artista,criacao,descricao,camada,estilo}
                                     console.log('editado com sucesso!')
                                     exibirMenu()
+                                    })
                                 })
                             })
                         })
@@ -107,7 +111,7 @@ function remover() {
     } else {
         console.log('Lista de elementos')
         arte.forEach((elemento, i) => {
-            console.log(`${i+1}:${arte[i].nome},${arte[i].artista},${arte[i].criacao},${arte[i.descricao]},${arte[i].camada}`)
+            console.log(`${i+1}:${arte[i].nome},${arte[i].autor},${arte[i].criacao},${arte[i].descricao},${arte[i].categoria},${arte[i].estilo}`)
         })
         rl.question('Digite o número do elemento que deseja remover:', (numero) => {
             if (numero > 0 && numero <= arte.length) {
