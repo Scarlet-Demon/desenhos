@@ -271,7 +271,7 @@ function listarCategorias() {
 ```
 ## Listar os Estilos das Artes
 
-Essa função, analisa o código, pega as informações referente aos anos das obras e mostra para o usuario em ordem.
+Essa função, analisa o código, pega as informações referente aos estilos das obras e mostra para o usuario em ordem.
 ```javascript
 function listarEstilos() {
     if (arte.length === 0) {
