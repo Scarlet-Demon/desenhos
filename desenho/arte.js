@@ -124,9 +124,8 @@ function listarAnos() {
         console.log('Nenhuma arte cadastrada.');
     } else {
         const anos = arte.map(obra => obra.criacao);
-        const anosUnicos = [...new Set(anos)]; // Obter apenas valores únicos
         console.log('Anos das obras:');
-        anosUnicos.forEach(ano => console.log(ano));
+        anos.forEach(ano => console.log(ano));
     }
     listarMenu();
 }
@@ -136,9 +135,8 @@ function listarCategorias() {
         console.log('Nenhuma arte cadastrada.');
     } else {
         const categorias = arte.map(obra => obra.categoria);
-        const categoriasUnicas = [...new Set(categorias)]; // Obter apenas valores únicos
         console.log('Categorias das artes:');
-        categoriasUnicas.forEach(categoria => console.log(categoria));
+        categorias.forEach(categoria => console.log(categoria));
     }
     listarMenu();
 }
@@ -148,9 +146,8 @@ function listarEstilos() {
         console.log('Nenhuma arte cadastrada.');
     } else {
         const estilos = arte.map(obra => obra.estilo);
-        const estilosUnicos = [...new Set(estilos)]; // Obter apenas valores únicos
         console.log('Estilos das artes:');
-        estilosUnicos.forEach(estilo => console.log(estilo));
+        estilos.forEach(estilo => console.log(estilo));
     }
     listarMenu();
 }
