@@ -110,7 +110,7 @@ Essa função, irá listar as informações que o usuário adicionou (os objetos
 Caso não seja adicionado nenhuma informação, aparecerá a seguinte mensagem: `nenhuma arte salva`, caso contrario, ele irá listar todas as informações colocadas.
 
 ```javascript
-function ListarLembretes() {
+function ListarArtes() {
     if(arte ==''){
     console.log('nenhuma arte cadastrado')
     exibirMenu()
